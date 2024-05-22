@@ -23,13 +23,13 @@ public class Main {
         System.out.println(leapYear(2000));
 
 //      Задание 10
-        int[] arr10 = {1,1,1,0,0,0};
+        int[] arr10 = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         for (int i = 0; i < arr10.length; i++) {
             if (arr10[i] == 1)
                 arr10[i] = 0;
             else
                 arr10[i] = 1;
-//            System.out.println(arr10[i]);
+//            System.out.print("[" + arr10[i] + "] ");
         }
 
 //      Задание 11
@@ -45,7 +45,7 @@ public class Main {
         for (int i = 0; i<arr12.length; i++) {
             if (arr12[i] < 6)
                 arr12[i] = arr12[i] * 2;
-//            System.out.println(arr12[i]);
+//            System.out.print("[" + arr12[i] + "] ");
 
         }
 
@@ -61,8 +61,7 @@ public class Main {
             }
 
         }
-
-//        Вывод двумерного массива
+//        Вывод двумерного массива для задания 13
 //        Arrays.stream(arr13).map(Arrays::toString).forEach(System.out::println);
 
 //      Задание 14
@@ -70,7 +69,7 @@ public class Main {
 
             }
 
-//      Методы
+
 //      Задание 1
     public static void printThreeWords() {
         System.out.println("Orange");
