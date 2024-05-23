@@ -12,7 +12,7 @@ public class Main {
 //      Задание 4
         compareNumbers();
 //      Задание 5
-        System.out.println(compareSumm(11, 11));
+        System.out.println(compareSumm(9, 11));
 //      Задание 6
         positiveOrNegative(-5);
 //      Задание 7
@@ -120,11 +120,6 @@ public class Main {
         else if ((a+b) > 20)
             e = false;
         else e = true;
-
-//        Вариант без if )
-//        boolean c = (a+b) >= 10;
-//        boolean d = (a+b) <= 20;
-//        boolean e = c==d;
 
         return e;
 
