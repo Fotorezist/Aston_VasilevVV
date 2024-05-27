@@ -23,9 +23,9 @@ public class Main {
         System.out.println();
 
         Park park1 = new Park("Саратов", "Липки", 5);
-        Park.Entertainment entertainment1 = park1.new Entertainment(10, 21, 500);
+        Park.Entertainment entertainment1 = park1.new Entertainment("Карусель",8, 21, 500);
         park1.parkInfo();
-        entertainment1.entertaimentInfo();
+        entertainment1.entertainmentInfo();
 
         }
 

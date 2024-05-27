@@ -14,17 +14,19 @@ public class Park {
     }
 
     public class Entertainment {
+        private String entertainmentName;
         private int startWork;
         private int stopWork;
         private int price;
-        public Entertainment (int startWork, int stopWork, int price){
+        public Entertainment (String entertainmentName, int startWork, int stopWork, int price){
+            this.entertainmentName = entertainmentName;
             this.startWork = startWork;
             this.stopWork = stopWork;
             this.price = price;
         }
 //        Вывод данных об атракционах
-        public void entertaimentInfo() {
-            System.out.println("Атракционы: \n" + " Время открытия: " + startWork + "\n Время закрытия: " + stopWork + "\n Стоимость: " + price);
+        public void entertainmentInfo() {
+            System.out.println("Атракционы: \n" + " Название:" + entertainmentName + "\n Время открытия: " + startWork + "\n Время закрытия: " + stopWork + "\n Стоимость: " + price);
         }
     }
 
