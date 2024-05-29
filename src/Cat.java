@@ -19,12 +19,16 @@ public class Cat extends Animal{
 
     }
     public void eating (int foodInDish){
-        int leftovers;
-        leftovers = foodInDish - foodСonsumption;
-        if (leftovers < 0) System.out.println("В миске мало еды, кот " + name + " остался голодным. " + " Его сытость = " + fullness);
+        Dish dish1 = new Dish(foodInDish);
+        if (foodСonsumption > foodInDish){
+            System.out.println("В миске мало еды, кот " + name + " остался голодным. " + " Его сытость = " + fullness);
+            System.out.println("В миске осталось " + foodInDish + " еды");
+        }
         else {
-            fullness = true;
-            System.out.println(name + " наелся " + " Его сытость = " + fullness);
+                fullness = true;
+                System.out.println(name + " наелся " + " Его сытость = " + fullness);
+
+            dish1.empty(foodСonsumption);
         }
 
     }

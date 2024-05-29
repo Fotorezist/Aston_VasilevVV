@@ -12,5 +12,14 @@ public class Dish {
         foodInDish = foodInDish + addCount;
 
     }
+    public void empty(int foodMinus) {
+        foodInDish = foodInDish - foodMinus;
+        if (foodInDish > 0) {
+            System.out.println("В миске осталось " + foodInDish + " еды");
+        }
+        else {
+            System.out.println("Миска пуста");
+        }
+    }
 
 }
