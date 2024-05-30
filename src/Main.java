@@ -13,17 +13,19 @@ public class Main {
         dog1.run(700);
         dog1.swim(5);
 
-//      Выводим количество созданных объектов
-//        System.out.println(Cat.animalNumber);
-//        System.out.println(Cat.catNumber);
-//        System.out.println(Dog.dogNumber);
+        System.out.println();
+
+//      Выводим количество созданных объектов (животных, котов и собак)
+        System.out.println("Всего животных: " + Animal.animalNumber);
+        System.out.println("Всего котов: " + Cat.catNumber);
+        System.out.println("Всего собак: " + Dog.dogNumber);
+        System.out.println();
 
 //      Создаём миску с едой для кота
-        Dish dish1 = new Dish( 5);
-
+        Dish dish = new Dish( 6);
 
 //      Кот поел из миски
-        cat2.eating(dish1.foodInDish);
+        dish.emptying(cat2.eating(dish.foodInDish));
 
 //      Создаём массив котов
         Cat[] catArr = new Cat[3];
@@ -32,14 +34,15 @@ public class Main {
         catArr[2] = new Cat("Наглый", 6, false);
 
 //      Добавляем еду в миску
-        dish1.addFood(7);
+        dish.addFood(8);
+
 
         for (int i = 0; i < catArr.length; i++){
-            if (dish1.foodInDish >= 0){
-                catArr[i].eating(dish1.foodInDish);
-                dish1.foodInDish = dish1.foodInDish - catArr[i].foodСonsumption;
+            if (dish.foodInDish >= 0){
+                dish.emptying(catArr[i].eating(dish.foodInDish));
 
             }
+
         }
 
 //        Задание 2
