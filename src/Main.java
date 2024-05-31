@@ -24,7 +24,7 @@ public class Main {
 //      Создаём пустую миску для кота
         Dish dish = new Dish();
 //      Добавляем еду в миску
-        dish.addFood(10);
+        dish.addFood(14);
 
 //      Кот поел из миски
         dish.emptying(cat1.eating(dish.foodInDish));
@@ -41,10 +41,8 @@ public class Main {
 
 //      Коты едят из миски
         for (int i = 0; i < catArr.length; i++){
-            if (dish.foodInDish >= 0){
-                dish.emptying(catArr[i].eating(dish.foodInDish));
 
-            }
+            dish.emptying(catArr[i].eating(dish.foodInDish));
 
         }
 
