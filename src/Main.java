@@ -4,13 +4,13 @@ public class Main {
         Cat cat1 = new Cat("Барсик", 4, false);
         Cat cat2 = new Cat("Принц", 5, true);
 
-        cat1.run(100);
+        cat1.run(-100);
         cat1.swim(3);
 
         Dog dog1 = new Dog("Полкан");
 
 
-        dog1.run(700);
+        dog1.run(-700);
         dog1.swim(5);
 
         System.out.println();
@@ -57,7 +57,7 @@ public class Main {
         circle1.border();
         System.out.println();
 
-        Rectangle rectangle1 = new Rectangle(2,3, "Blue", "Red");
+        Rectangle rectangle1 = new Rectangle(-2,3, "Blue", "Red");
         rectangle1.square();
         rectangle1.borderLength();
         rectangle1.background();

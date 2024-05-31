@@ -6,10 +6,11 @@ public class Cat extends Animal{
     public Cat (String name, int foodConsumption, Boolean fullness) {
         catNumber++;
         this.name = name;
-        this.foodConsumption = foodConsumption;
+        this.foodConsumption = Math.abs(foodConsumption);
         this.fullness = fullness;
     }
     public void run (int distance){
+        distance = Math.abs(distance);
         if (distance > 200) {
             System.out.println(name + " столько не пробежит");
         }

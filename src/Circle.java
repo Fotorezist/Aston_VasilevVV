@@ -5,7 +5,7 @@ public class Circle implements Figure {
     String border;
 
     public Circle (double radius, String background, String border){
-        this.radius = radius;
+        this.radius = Math.abs(radius);
         this.background = background;
         this.border = border;
     }

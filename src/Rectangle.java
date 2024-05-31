@@ -6,8 +6,8 @@ public class Rectangle implements Figure {
     String border;
 
     public Rectangle (double sideA, double sideB, String background, String border){
-        this.sideA = sideA;
-        this.sideB = sideB;
+        this.sideA = Math.abs(sideA);
+        this.sideB = Math.abs(sideB);
         this.background = background;
         this.border = border;
     }
