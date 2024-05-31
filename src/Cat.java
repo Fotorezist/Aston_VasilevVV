@@ -22,16 +22,24 @@ public class Cat extends Animal{
         System.out.println(name + " не умеет плавать");
 
     }
-    public int eating (int foodInDish){
-        if (foodConsumption > foodInDish){
-            System.out.println("В миске мало еды, кот " + name + " остался голодным. " + " Его сытость = " + fullness);
-            System.out.println("В миске осталось " + foodInDish + " еды");
+    public int eating (int foodInDish) {
+        if (fullness == true) {
+            System.out.println("Не кормите кота " + name + " , он уже сыт!");
         }
         else {
+            if (foodConsumption > foodInDish){
+            System.out.println("В миске мало еды, кот " + name + " остался голодным. " + " Его сытость = " + fullness);
+            System.out.println("В миске осталось " + foodInDish + " еды");}
+
+         else {
             fullness = true;
-            System.out.println(name + " съел " + foodConsumption + " еды и наелся. " + " Его сытость = " + fullness);
+                System.out.println(name + " съел " + foodConsumption + " еды и наелся. " + " Его сытость = " + fullness);
+         }
+            return foodConsumption;
+
         }
-        return foodConsumption;
+
+        return 0;
 
     }
 }

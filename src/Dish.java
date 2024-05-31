@@ -1,22 +1,35 @@
 public class Dish {
     int foodInDish;
 
-    public Dish(int foodInDish) {
-        this.foodInDish = foodInDish;
-        System.out.println("В миску положили: " + foodInDish + " еды");
+    public Dish() {
+        this.foodInDish = 0;
+        System.out.println("Достали миску из шкафа");
+
     }
 
     public void addFood(int addCount) {
 
-        System.out.println("В миску добавлено " + addCount + " еды");
-        foodInDish = foodInDish + addCount;
-        System.out.println("Теперь миске: " + foodInDish + " еды");
+        if (addCount > 0){
+            System.out.println("В миску добавлено " + addCount + " еды");
+            foodInDish = foodInDish + addCount;
+
+        } else {
+            System.out.println("Из миски забрали " + (addCount * (-1)) + " еды");
+            foodInDish = foodInDish + addCount;
+            if (foodInDish < 0) {
+                System.out.println("Нельзя забрать из миски больше чем там есть");
+                foodInDish = 0;
+            } else {
+                System.out.println("В миске осталось " + foodInDish + " еды");
+            }
+
+        }
         System.out.println();
 
     }
     public int emptying(int foodMinus) {
-        foodInDish = foodInDish - foodMinus;
-        if (foodInDish >= 0) {
+        if (foodInDish >= foodMinus) {
+            foodInDish = foodInDish - foodMinus;
             System.out.println("В миске осталось " + foodInDish + " еды");
             System.out.println();
         }

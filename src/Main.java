@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
 //  Задание 1
         Cat cat1 = new Cat("Барсик", 4, false);
-        Cat cat2 = new Cat("Принц", 5, false);
+        Cat cat2 = new Cat("Принц", 5, true);
 
         cat1.run(100);
         cat1.swim(3);
@@ -21,10 +21,13 @@ public class Main {
         System.out.println("Всего собак: " + Dog.dogNumber);
         System.out.println();
 
-//      Создаём миску с едой для кота
-        Dish dish = new Dish( 6);
+//      Создаём пустую миску для кота
+        Dish dish = new Dish();
+//      Добавляем еду в миску
+        dish.addFood(10);
 
 //      Кот поел из миски
+        dish.emptying(cat1.eating(dish.foodInDish));
         dish.emptying(cat2.eating(dish.foodInDish));
 
 //      Создаём массив котов
@@ -34,7 +37,7 @@ public class Main {
         catArr[2] = new Cat("Наглый", 6, false);
 
 //      Добавляем еду в миску
-        dish.addFood(8);
+        dish.addFood(-2);
 
 //      Коты едят из миски
         for (int i = 0; i < catArr.length; i++){
