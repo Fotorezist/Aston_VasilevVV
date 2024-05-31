@@ -12,8 +12,12 @@ public class Dog extends Animal {
 
         }
         public void swim(int distance) {
-            if (distance > 10) System.out.println(name + " столько не проплывёт");
-            else System.out.println(name + " проплыл " + distance + " метров");
+            if (distance > 10) {
+                System.out.println(name + " столько не проплывёт");
+            }
+            else {
+                System.out.println(name + " проплыл " + distance + " метров");
+            }
 
         }
 

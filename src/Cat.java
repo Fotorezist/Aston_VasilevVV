@@ -10,8 +10,12 @@ public class Cat extends Animal{
         this.fullness = fullness;
     }
     public void run (int distance){
-        if (distance > 200) System.out.println(name + " столько не пробежит");
-        else System.out.println(name + " пробежал " + distance + " метров");
+        if (distance > 200) {
+            System.out.println(name + " столько не пробежит");
+        }
+        else {
+            System.out.println(name + " пробежал " + distance + " метров");
+        }
 
     }
     public void swim (int distance){

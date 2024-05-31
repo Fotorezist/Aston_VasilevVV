@@ -36,7 +36,7 @@ public class Main {
 //      Добавляем еду в миску
         dish.addFood(8);
 
-
+//      Коты едят из миски
         for (int i = 0; i < catArr.length; i++){
             if (dish.foodInDish >= 0){
                 dish.emptying(catArr[i].eating(dish.foodInDish));
