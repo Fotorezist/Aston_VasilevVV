@@ -1,5 +1,5 @@
-class MyArrayDataException extends RuntimeException {
-    public MyArrayDataException(String message) {
-        super(message);
+public class MyArrayDataException extends Exception {
+    public MyArrayDataException(String errMessage) {
+        super(errMessage);
     }
 }

@@ -1,5 +1,5 @@
-class MyArraySizeException extends RuntimeException {
-    public MyArraySizeException(String message) {
-        super(message);
+public class MyArraySizeException extends Exception {
+    public MyArraySizeException(String errMessage) {
+        super(errMessage);
     }
 }
