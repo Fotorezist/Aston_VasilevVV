@@ -29,6 +29,7 @@ public class Main {
         for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
+
 //         Задание 2
 //         Телефонный справочник
 
@@ -40,14 +41,11 @@ public class Main {
             phoneBook.addPhone("Петров", "+7(8452) 74-86-03");
             phoneBook.addPhone("Иванов", "+7(8452) 26-07-57");
 
-//            Распечатка всего справочника
-//            phoneBook.printBook(phoneBook);
-
             phoneBook.getPhone("Иванов");
             phoneBook.getPhone("Петров");
 
-//        Фамилия, которой нет в справочнике
-            phoneBook.getPhone("Сидоров");
+//            Вывод всего справочника
+            phoneBook.printBook();
 
     }
 }

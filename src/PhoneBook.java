@@ -15,10 +15,11 @@ public class PhoneBook {
 
 //     Метод для получения списка телефонных номеров по фамилии
     public void getPhone(String lastName) {
-        System.out.println(lastName + " : " + phoneBook.getOrDefault(lastName, new ArrayList<>()));
-        }
+          System.out.println(lastName + " : " + phoneBook.getOrDefault(lastName, new ArrayList<>()));
+    }
 
-    public void printBook(PhoneBook phoneBook) {
+//     Метод для вывода всего телефонного справочника
+    public void printBook() {
         System.out.println(this.phoneBook);
     }
 }
