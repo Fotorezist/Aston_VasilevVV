@@ -17,7 +17,7 @@ public class FactorialTestJunit5 {
     @Tag("Correct_values")
     @DisplayName("Проверка вычисления факториала от 0")
     public void testFactorialOfZero() {
-//        Factorial factorial = new Factorial();
+//       Factorial factorial = new Factorial();
         assertEquals(1, Factorial.calculateFactorial(0));
         System.out.println("Тест 1 пройден успешно");
     }
