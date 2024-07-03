@@ -17,7 +17,6 @@ public class FactorialTestJunit5 {
     @Tag("Correct_values")
     @DisplayName("Проверка вычисления факториала от 0")
     public void testFactorialOfZero() {
-//       Factorial factorial = new Factorial();
         assertEquals(1, Factorial.calculateFactorial(0));
         System.out.println("Тест 1 пройден успешно");
     }
@@ -27,7 +26,6 @@ public class FactorialTestJunit5 {
     @Tag("Correct_values")
     @DisplayName("Проверка вычисления факториала от 1")
     public void testFactorialOfOne() {
-//        Factorial factorial = new Factorial();
         assertEquals(1, Factorial.calculateFactorial(1));
         System.out.println("Тест 2 пройден успешно");
     }
@@ -37,7 +35,6 @@ public class FactorialTestJunit5 {
     @Tag("Correct_values")
     @DisplayName("Проверка вычисления факториала от 2")
     public void testFactorialOfTwo() {
-//        Factorial factorial = new Factorial();
         assertEquals(2, Factorial.calculateFactorial(2));
         System.out.println("Тест 3 пройден успешно");
     }
@@ -48,7 +45,6 @@ public class FactorialTestJunit5 {
     @Tag("Correct_values")
     @DisplayName("Проверка вычисления факториала от 44(int to long)")
     public void testFactorialForLong() {
-//        Factorial factorial = new Factorial();
         assertEquals(2673996885588443136L, Factorial.calculateFactorial(44));
         System.out.println("Тест 4 пройден успешно");
     }
@@ -57,7 +53,6 @@ public class FactorialTestJunit5 {
     @Order(5)
     @DisplayName("Проверка вычисления факториала для отрицательных чисел")
     public void testFactorialOfNegativeNumber() {
-//        Factorial factorial = new Factorial();
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             Factorial.calculateFactorial(-3);
         });
