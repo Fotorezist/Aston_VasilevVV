@@ -50,9 +50,6 @@ public class Tests {
 
         WebElement belkartLogo = driver.findElement(By.xpath("//img[@alt='Белкарт']"));
         Assert.assertNotNull(belkartLogo, "Логотип платёжной системы Белкарт отсутствует");
-
-//        List<WebElement> paymentLogos = driver.findElements(By.id("//div[@class='pay__partners']"));
-//        Assert.assertTrue(paymentLogos.isEmpty(), "Логотипы платёжных систем отсутствуют");
     }
 
     @Test(description="Проверка работы ссылки «Подробнее о сервисе»", priority = 3)
@@ -62,8 +59,6 @@ public class Tests {
         Assert.assertNotNull(moreInfoLink, "Ссылка 'Подробнее о сервисе' отсутствует");
         moreInfoLink.click();
 
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-//        WebElement cookieAgreeButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(), 'Порядок оплаты и безопасность интернет платежей')]")));
 //        Проверка, что ссылка ведёт на нужную страницу
         String expectedUrl = "https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/";
         String actualUrl = driver.getCurrentUrl();
