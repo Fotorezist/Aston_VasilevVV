@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class Tests {
     private WebDriver driver;
@@ -20,7 +19,6 @@ public class Tests {
     public void setUp() {
 
         driver = new ChromeDriver();
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://www.mts.by");
 
@@ -70,7 +68,6 @@ public class Tests {
 
         // Проверка появления формы для ввода платежных данных после нажатия кнопки продолжить
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebElement paymentForm = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='bepaid-app']")));
         Assert.assertNotNull(paymentForm, "Платёжная форма не открывается");
 
