@@ -1,16 +1,15 @@
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-public class GetRequests {
+public class DeleteRequest {
     public static void main(String[] args) {
         RestAssured.baseURI = "https://postman-echo.com";
 
-
         Response response = RestAssured
                 .given()
-                .queryParam("foo", "bar")
-                .queryParam("baz", "qux")
-                .get("/get");
+                .header("Content-Type", "text/plain") // Указываем тип содержимого
+//                .queryParam("key", "value") // Добавляем параметры
+                .delete("/delete"); // Определяем конечную точку /delete
 
 //        Выводим статус кода ответа
         System.out.println("Status Code: " + response.getStatusCode());
