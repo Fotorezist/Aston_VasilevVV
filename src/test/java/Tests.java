@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class Tests {
     private WebDriver driver;
@@ -106,6 +106,35 @@ public class Tests {
         Assert.assertEquals(phoneNumberPlaceholder, "Номер счета на 2073", "Текст плейсхолдера для номера телефона некорректен.");
         Assert.assertEquals(amountPlaceholder, "Сумма", "Текст плейсхолдера для суммы некорректен.");
         Assert.assertEquals(emailPlaceholder, "E-mail для отправки чека", "Текст плейсхолдера для E-mail некорректен.");
+    }
+
+    @Test(description="Проверка введённых данных в разделе 'Услуги связи', после нажатия кнопки 'Продолжить'", priority = 4)
+    public void testPayWrapper() {
+//        Заполняем поля формы оплаты
+        WebElement phoneNumberField = driver.findElement(By.xpath("//input[@id='connection-phone']"));
+        WebElement amountField = driver.findElement(By.xpath("//input[@id='connection-sum']"));
+
+        phoneNumberField.sendKeys("297777777");
+        amountField.sendKeys("10");
+
+        WebElement continueButton = driver.findElement(By.xpath("//*[@id='pay-connection']/button"));
+        continueButton.click();
+
+//        Переключение на новый фрейм
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement newFrame = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//iframe[@class='bepaid-iframe']")));
+        driver.switchTo().frame(newFrame);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+
+//        Проверяем корректность суммы и номера телефона в окне подтверждения оплаты
+        String amountText=driver.findElement(By.xpath("//div[@class='pay-description__cost']")).getAttribute("textContent");
+        String paymentInfoText=driver.findElement(By.xpath("//span[contains( text(),'375297777777')]")).getAttribute("textContent");
+        String confirmButton=driver.findElement(By.xpath("//button[contains( text(),' Оплатить  10.00 BYN ')]")).getAttribute("textContent");
+
+        Assert.assertEquals(amountText, "10.00 BYN", "Несоответствие суммы");
+        Assert.assertEquals(paymentInfoText, "Оплата: Услуги связи\n" + "Номер:375297777777", "Несоответствие номера телефона");
+        Assert.assertEquals(confirmButton, " Оплатить  10.00 BYN ", "Несоответствие текста кнопки оплаты");
+
     }
 
 
