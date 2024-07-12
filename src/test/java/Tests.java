@@ -144,20 +144,23 @@ public class Tests {
         Assert.assertEquals(cardNumber, "Номер карты", "Несоответствие в поле номер карты");
         Assert.assertEquals(validity, "Срок действия", "Несоответствие в поле срок действия карты");
         Assert.assertEquals(cvc, "CVC", "Несоответствие в поле CVC");
-        Assert.assertEquals(cardHolder, "Имя держателя (как на карте)", "Несоответствие в поле имя держателя");
+        Assert.assertEquals(cardHolder, "Имя держателя (как на карте)", "Несоответствие в поле имя держателя карты");
 
 //        Проверяем наличие логотипов платёжных систем
-        WebElement masterCardLogo = driver.findElement(By.xpath("//img[@class='ng-tns-c61-0 ng-star-inserted']"));
+        WebElement masterCardLogo = driver.findElement(By.xpath("//img[@src='assets/images/payment-icons/card-types/mastercard-system.svg']"));
         Assert.assertNotNull(masterCardLogo, "Логотип платёжной системы Master Card отсутствует");
 
-        WebElement visaLogo = driver.findElement(By.xpath("//img[@class='ng-tns-c61-0 ng-star-inserted']"));
+        WebElement visaLogo = driver.findElement(By.xpath("//img[@src='assets/images/payment-icons/card-types/visa-system.svg']"));
         Assert.assertNotNull(visaLogo, "Логотип платёжной системы Visa отсутствует");
 
-        WebElement belkartLogo = driver.findElement(By.xpath("//img[@class='ng-tns-c61-0 ng-star-inserted']"));
+        WebElement belkartLogo = driver.findElement(By.xpath("//img[@src='assets/images/payment-icons/card-types/belkart-system.svg']"));
         Assert.assertNotNull(belkartLogo, "Логотип платёжной системы Белкарт отсутствует");
 
-        WebElement mir = driver.findElement(By.xpath("//img[@class='ng-tns-c61-0 ng-trigger ng-trigger-randomCardState ng-star-inserted']"));
+        WebElement mir = driver.findElement(By.xpath("//img[@src='assets/images/payment-icons/card-types/mir-system-ru.svg']"));
         Assert.assertNotNull(mir, "Логотип платёжной системы Мир отсутствует");
+
+        WebElement maestro = driver.findElement(By.xpath("//img[@src='assets/images/payment-icons/card-types/maestro-system.svg']"));
+        Assert.assertNotNull(maestro, "Логотип платёжной системы Мир отсутствует");
 
     }
 
