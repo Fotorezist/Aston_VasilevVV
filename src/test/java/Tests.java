@@ -135,6 +135,17 @@ public class Tests {
         Assert.assertEquals(paymentInfoText, "Оплата: Услуги связи\n" + "Номер:375297777777", "Несоответствие номера телефона");
         Assert.assertEquals(confirmButton, " Оплатить  10.00 BYN ", "Несоответствие текста кнопки оплаты");
 
+//        Проверяем надписи в полях для заполнения данных карты
+        String cardNumber=driver.findElement(By.xpath("//div[@class='content ng-tns-c46-1']")).getAttribute("textContent");
+        String validity=driver.findElement(By.xpath("//div[@class='content ng-tns-c46-4']")).getAttribute("textContent");
+        String cvc=driver.findElement(By.xpath("//div[@class='content ng-tns-c46-5']")).getAttribute("textContent");
+        String cardHolder=driver.findElement(By.xpath("//div[@class='content ng-tns-c46-3']")).getAttribute("textContent");
+
+        Assert.assertEquals(cardNumber, "Номер карты", "Несоответствие в поле номер карты");
+        Assert.assertEquals(validity, "Срок действия", "Несоответствие в поле срок действия карты");
+        Assert.assertEquals(cvc, "CVC", "Несоответствие в поле CVC");
+        Assert.assertEquals(cardHolder, "Имя держателя (как на карте)", "Несоответствие в поле имя держателя");
+
     }
 
 
