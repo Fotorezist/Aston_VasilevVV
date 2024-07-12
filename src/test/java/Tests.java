@@ -51,7 +51,7 @@ public class Tests {
     @Test(description="Проверка плейсхолдеров в разделе 'Домашний интернет'", priority = 2)
     public void testPlaceholderTexts2() {
 
-//        Выбираем "Услуги связи" из выпадающего списка
+//        Выбираем "Домашний интернет" из выпадающего списка
         WebElement dropdownList = driver.findElement(By.xpath("//span[@class='select__now']"));
         dropdownList.click();
         WebElement listOption = driver.findElement(By.xpath("//p[contains(text(), 'Домашний интернет')]"));
@@ -63,7 +63,7 @@ public class Tests {
         String emailPlaceholder=driver.findElement(By.xpath("//input[@id='internet-email']")).getAttribute("placeholder");
 
 //        Сравниваем текст placeholder с ожидаемым
-        Assert.assertEquals(phoneNumberPlaceholder, "Номер абонента", "Текст плейсхолдера для номера телефона некорректен.");
+        Assert.assertEquals(phoneNumberPlaceholder, "Номер абонента", "Текст плейсхолдера для номера абонента некорректен.");
         Assert.assertEquals(amountPlaceholder, "Сумма", "Текст плейсхолдера для суммы некорректен.");
         Assert.assertEquals(emailPlaceholder, "E-mail для отправки чека", "Текст плейсхолдера для E-mail некорректен.");
     }
@@ -71,7 +71,7 @@ public class Tests {
     @Test(description="Проверка плейсхолдеров в разделе 'Рассрочка'", priority = 3)
     public void testPlaceholderTexts3() {
 
-//        Выбираем "Услуги связи" из выпадающего списка
+//        Выбираем "Рассрочка" из выпадающего списка
         WebElement dropdownList = driver.findElement(By.xpath("//span[@class='select__now']"));
         dropdownList.click();
         WebElement listOption = driver.findElement(By.xpath("//p[contains(text(), 'Рассрочка')]"));
@@ -83,7 +83,7 @@ public class Tests {
         String emailPlaceholder=driver.findElement(By.xpath("//input[@id='instalment-email']")).getAttribute("placeholder");
 
 //        Сравниваем текст placeholder с ожидаемым
-        Assert.assertEquals(phoneNumberPlaceholder, "Номер счета на 44", "Текст плейсхолдера для номера телефона некорректен.");
+        Assert.assertEquals(phoneNumberPlaceholder, "Номер счета на 44", "Текст плейсхолдера для номера счёта некорректен.");
         Assert.assertEquals(amountPlaceholder, "Сумма", "Текст плейсхолдера для суммы некорректен.");
         Assert.assertEquals(emailPlaceholder, "E-mail для отправки чека", "Текст плейсхолдера для E-mail некорректен.");
     }
@@ -91,7 +91,7 @@ public class Tests {
     @Test(description="Проверка плейсхолдеров в разделе 'Задолженность'", priority = 3)
     public void testPlaceholderTexts4() {
 
-//        Выбираем "Услуги связи" из выпадающего списка
+//        Выбираем "Задолженность" из выпадающего списка
         WebElement dropdownList = driver.findElement(By.xpath("//span[@class='select__now']"));
         dropdownList.click();
         WebElement listOption = driver.findElement(By.xpath("//p[contains(text(), 'Задолженность')]"));
@@ -103,7 +103,7 @@ public class Tests {
         String emailPlaceholder=driver.findElement(By.xpath("//input[@id='arrears-email']")).getAttribute("placeholder");
 
 //        Сравниваем текст placeholder с ожидаемым
-        Assert.assertEquals(phoneNumberPlaceholder, "Номер счета на 2073", "Текст плейсхолдера для номера телефона некорректен.");
+        Assert.assertEquals(phoneNumberPlaceholder, "Номер счета на 2073", "Текст плейсхолдера для номера счёта некорректен.");
         Assert.assertEquals(amountPlaceholder, "Сумма", "Текст плейсхолдера для суммы некорректен.");
         Assert.assertEquals(emailPlaceholder, "E-mail для отправки чека", "Текст плейсхолдера для E-mail некорректен.");
     }
