@@ -18,13 +18,35 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+import java.io.File;
+
 
 public class AllureTest {
     private WebDriver driver;
+
+    @BeforeSuite
+//    Очистка папки allure-results перед запуском тестов
+    public void cleanAllureResults() {
+        Path allureResultsPath = Paths.get("target/allure-results");
+        if (Files.exists(allureResultsPath)) {
+            try {
+                Files.walk(allureResultsPath)
+                        .map(Path::toFile)
+                        .forEach(File::delete);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     @BeforeMethod
     public void setUp() {
 
