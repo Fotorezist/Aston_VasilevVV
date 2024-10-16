@@ -1,6 +1,6 @@
 class Cat extends Animal {
     private static final int MAX_RUN_DISTANCE = 200;
-    private static final int MAX_SWIM_DISTANCE = 0; // Коты не умеют плавать private boolean сытость;
+    private static final int MAX_SWIM_DISTANCE = 0; // Коты не умеют плавать
     private boolean satiety;
 
     public Cat(String name) {
