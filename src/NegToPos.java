@@ -5,6 +5,11 @@ import java.util.stream.Collectors;
 
 public class NegToPos {
     public static void main(String[] args) {
+
+        //Создать коллекцию целых чисел, написать программу:
+//  Который отрицательные числа делает положительными и возвращает коллекцию
+//  ([1, 5, -3, 7] -> [1, 5, 3, 7])
+
         List<Integer> numbers = Arrays.asList(1, 5, -3, 7);
 
         List <Integer> result = negativeToPositive(numbers);
