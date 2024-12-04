@@ -1,25 +1,18 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Main {
-    public static void main(String[] args) {
-        Map<Integer, String> originalMap = new HashMap<>();
-        originalMap.put(1, "one");
-        originalMap.put(2, "two");
-        originalMap.put(3, "three");
 
-        Map<String, Integer> swappedMap = swapKeyValue(originalMap);
+    public class Main {
+        public static void main(String[] args) {
+            String str = "Hello, world!";
+            char[] arr = str.toCharArray();
 
-        System.out.println(swappedMap);
-    }
+            for (int i = 0; i < arr.length / 2; i++) {
+                char temp = arr[i];
+                arr[i] = arr[arr.length - i - 1];
+                arr[arr.length - i - 1] = temp;
+            }
 
-    public static Map<String, Integer> swapKeyValue(Map<Integer, String> originalMap) {
-        Map<String, Integer> swappedMap = new HashMap<>();
-
-        for (Map.Entry<Integer, String> entry : originalMap.entrySet()) {
-            swappedMap.put(entry.getValue(), entry.getKey());
+            System.out.println(arr);
         }
-
-        return swappedMap;
     }
-}
