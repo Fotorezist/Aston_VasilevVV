@@ -4,6 +4,8 @@ import java.util.stream.Stream;
 
 public class SumOdd {
     public static void main(String[] args) {
+        // Найти сумму нечетных чисел в коллекции
+
         List<Integer> numbers = new ArrayList<>();
         numbers.add(1);
         numbers.add(2);
